@@ -14,7 +14,7 @@ USER root
 
 # Note: Latest version of kubectl may be found at:
 # https://aur.archlinux.org/packages/kubectl-bin/
-ENV KUBE_LATEST_VERSION="v1.16.8"
+ENV KUBE_LATEST_VERSION="v1.18.0"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
 ENV HELM_VERSION="v3.3.0"
