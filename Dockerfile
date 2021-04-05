@@ -20,15 +20,16 @@ ENV KUBE_LATEST_VERSION="v1.18.0"
 ENV HELM_VERSION="v3.3.0"
 # Note: Latest version of docker may be found at:
 # https://get.docker.com/builds
-ENV DOCKER_VERSION="17.04.0"
+ENV DOCKER_VERSION="18.9.0"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # Install Kubectl
     && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
     # Install Helm
-    && curl -L http://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -o /tmp/helm.tar.gz \
-    && tar -zxvf /tmp/helm.tar.gz -C /tmp \
+    && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 -o /tmp/get_helm.sh \
+    && chmod 700 /tmp/get_helm.sh \
+    && ./tmp/get_helm.sh \
     && cp /tmp/linux-amd64/helm /usr/local/bin/helm \
     # Install Docker
     && curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION-ce.tgz \
