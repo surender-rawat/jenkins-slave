@@ -24,6 +24,7 @@ ENV DOCKER_VERSION="18.09.0"
 
 RUN  mkdir -p "/etc/docker" && touch "/etc/docker/daemon.json"  
 RUN  echo "{dns\": [\"10.0.0.2\", \"10.0.0.3\"]}" > /etc/docker/daemon.json
+RUN chmod 644 /etc/resolv.conf
 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
