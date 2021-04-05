@@ -9,21 +9,25 @@ pipeline {
     stages {
     
     stage('Docker Build') {
-      steps {
-        container ('docker') {
-        sh 'docker build -t surender-rawat/jenkins-slave:latest .'
-        }
-      }
-    }
-    stage('Docker Push') {
+          steps {
+                    container ('docker') {
+                    sh 'docker build -t surender-rawat/jenkins-slave:latest .'
+                    }
+          }
+       }
+    
+        
+     stage('Docker Push') {
       
-      steps {
-          container ('docker') {
-        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+        steps {
+            container ('docker') {
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           sh 'docker push shanem/spring-petclinic:latest'
-        }
-          }
+            }
+         }
       }
+    
+     }
     }
 }
