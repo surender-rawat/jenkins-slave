@@ -22,9 +22,9 @@ ENV HELM_VERSION="v3.3.0"
 # https://get.docker.com/builds
 ENV DOCKER_VERSION="18.09.0"
 
-RUN echo "!#/bin/bash\nif [ ! -e \"/etc/docker/daemon.json\" ]; then\necho \"{\"dns\":[\"10.0.0.2\", \"10.0.0.3\"]  } \nfi" > script.sh
-CMD sudo chmod +x script.sh
-CMD sudo ./script.sh
+RUN sudo > /etc/docker/daemon.json 
+RUN sudo echo "{dns\": [\"10.0.0.2\", \"10.0.0.3\"]" > /etc/docker/daemon.json
+
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     && chmod o+r /etc/resolv.conf \
