@@ -22,7 +22,7 @@ ENV HELM_VERSION="v3.3.0"
 # https://get.docker.com/builds
 ENV DOCKER_VERSION="18.09.0"
 
-RUN  > /etc/docker/daemon.json 
+RUN  cat > /etc/docker/daemon.json 
 RUN  echo "{dns\": [\"10.0.0.2\", \"10.0.0.3\"]" > /etc/docker/daemon.json
 
 
