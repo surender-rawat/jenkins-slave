@@ -46,6 +46,11 @@ apt-get install -y --no-install-recommends \
         openjdk-11-jre
         
 CMD ["java","-version"]
+
+#install GIT
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
     
   
 
