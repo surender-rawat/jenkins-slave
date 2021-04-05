@@ -1,2 +1,2 @@
-# jenkins-slave
-Jenkins slave with kubectl helm docker jdk and git
+# jnlp-slave-helm
+Slave image for the Jenkins Helm Chart which supports kubectl, docker, and helm.
