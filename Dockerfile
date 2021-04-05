@@ -27,9 +27,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
     # Install Helm
-    && curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 -o /tmp/get_helm.sh \
-    && chmod 700 /tmp/get_helm.sh \
-    && sh /tmp/get_helm.sh \
+    && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
+    && chmod 700 get_helm.sh \
+    && ./get_helm.sh \
     && cp /tmp/linux-amd64/helm /usr/local/bin/helm \
     # Install Docker
     && curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION-ce.tgz \
