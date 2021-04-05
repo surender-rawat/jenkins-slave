@@ -20,7 +20,7 @@ ENV KUBE_LATEST_VERSION="v1.18.0"
 ENV HELM_VERSION="v3.3.0"
 # Note: Latest version of docker may be found at:
 # https://get.docker.com/builds
-ENV DOCKER_VERSION="18.9.0"
+ENV DOCKER_VERSION="18.09.0"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # Install Kubectl
