@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # Install Helm
     && curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 -o /tmp/get_helm.sh \
     && chmod 700 /tmp/get_helm.sh \
-    && ./tmp/get_helm.sh \
+    && sh /tmp/get_helm.sh \
     && cp /tmp/linux-amd64/helm /usr/local/bin/helm \
     # Install Docker
     && curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION-ce.tgz \
