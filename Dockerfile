@@ -14,10 +14,10 @@ USER root
 
 # Note: Latest version of kubectl may be found at:
 # https://aur.archlinux.org/packages/kubectl-bin/
-ENV KUBE_LATEST_VERSION="v1.6.0"
+ENV KUBE_LATEST_VERSION="v1.16.8"
 # Note: Latest version of helm may be found at:
 # https://github.com/kubernetes/helm/releases
-ENV HELM_VERSION="v2.3.0"
+ENV HELM_VERSION="v3.3.0"
 # Note: Latest version of docker may be found at:
 # https://get.docker.com/builds
 ENV DOCKER_VERSION="17.04.0"
