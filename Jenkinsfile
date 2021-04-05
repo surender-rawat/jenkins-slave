@@ -5,7 +5,13 @@ pipeline {
         registryCredential = '52d2ca1e-cf01-4b6a-906e-b2da7f260cb2' 
         dockerImage = '' 
     }
-
+    
+    agent {
+    kubernetes {
+      inheritFrom 'helm'
+    }
+  }
+    
     stages {
     
     stage('Docker Build') {
