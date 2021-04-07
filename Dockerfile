@@ -22,9 +22,9 @@ ENV HELM_VERSION="v3.3.0"
 # https://get.docker.com/builds
 ENV DOCKER_VERSION="18.09.0"
 
-RUN  mkdir -p "/etc/docker" && touch "/etc/docker/daemon.json"  
-RUN  echo "{dns\": [\"10.0.0.2\", \"10.0.0.3\"]}" > /etc/docker/daemon.json
-RUN chmod 644 /etc/resolv.conf
+#RUN  mkdir -p "/etc/docker" && touch "/etc/docker/daemon.json"  
+#RUN  echo "{dns\": [\"10.0.0.2\", \"10.0.0.3\"]}" > /etc/docker/daemon.json
+#RUN chmod 644 /etc/resolv.conf
 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -54,9 +54,9 @@ apt-get install -y --no-install-recommends \
 CMD ["java","-version"]
 
 #install GIT
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y git
+#RUN apt-get update && \
+#    apt-get upgrade -y && \
+#    apt-get install -y git
     
   
 
