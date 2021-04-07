@@ -28,7 +28,6 @@ ENV DOCKER_VERSION="18.09.0"
 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    && chmod o+r /etc/resolv.conf \
     # Install Kubectl
     && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl \
