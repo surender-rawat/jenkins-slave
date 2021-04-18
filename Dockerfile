@@ -52,7 +52,7 @@ apt-get install -y --no-install-recommends \
         
         
 # installing aws cli
-RUN apk update && apk add \
+RUN apt-get update && apt-get add \
 	ca-certificates \
 	groff \
 	less \
