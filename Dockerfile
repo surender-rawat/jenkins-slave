@@ -52,15 +52,15 @@ apt-get install -y --no-install-recommends \
         
         
 # installing aws cli
-#RUN apk update && apk add \
-#	ca-certificates \
-#	groff \
-#	less \
-#	python \
-#	py-pip \
-#	&& rm -rf /var/cache/apk/* \
- # && pip install pip --upgrade \
-  #&& pip install awscli
+RUN apk update && apk add \
+	ca-certificates \
+	groff \
+	less \
+	python \
+	py-pip \
+	&& rm -rf /var/cache/apk/* \
+  && pip install pip --upgrade \
+  && pip install awscli
 
         
 CMD ["java","-version"]
